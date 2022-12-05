@@ -1,0 +1,15 @@
+_format_version: "2.1"
+_transform: true
+
+services:
+- name: test-service
+  url: https://httpbin.org/get
+  routes:
+  - name: test-route
+    paths:
+    - /test-service
+plugins:
+  - name: go-plugin-test
+    service: test-service
+    config:
+      message: "hello world"
